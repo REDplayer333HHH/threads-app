@@ -1,0 +1,131 @@
+.header-div{
+    overflow: hidden;
+    width: 100%;
+    height: 10vh;
+    background-color:rebeccapurple;
+    text-align: center;
+    border-radius: 1vh;
+}
+
+.header{
+    overflow: hidden;
+    margin-top: 2.5vh;
+    font-size: 5vh;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.option-left-button{
+    margin-left: 10%;
+}
+
+.option-right-button{
+    margin-left: 10%;
+}
+
+.flex-a{
+    display: flex;
+}
+
+.options-button{
+    transition-duration: 0.4s;
+    margin-top: 20vh;
+    overflow: hidden;
+    background-color: rebeccapurple;
+    height: 30vh;
+    width: 35%;
+    border-radius: 1vh;
+    text-align: center;
+    border-width: 0vh;
+}
+
+.options-button:hover{
+    background-color: blueviolet;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.options-header{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5vh;
+    margin-top: 5vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+    background-color: rebeccapurple;
+    border-radius: 1vh;
+    margin-top: 5vh;
+}
+
+.form-label{
+    text-align: left;
+    color: white;
+    border-radius: 1vh;
+    overflow: hidden;
+    text-align: left;
+    font-size: 2vh;
+    margin-left: 5%;
+}
+
+.form-input-small{
+    height: 4vh;
+}
+
+.form-input-big{
+    height: 40vh;
+}
+
+.form-input{
+    overflow: auto;
+    margin-left: 5%;
+    border-width: 0vh;
+    border-radius: 1vh;
+    width: 90%;
+    font-size: 2.5vh;
+    color: rebeccapurple;
+}
+
+.form-button{
+    transition-duration: 0.4s;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 5vh;
+    height: 5vh;
+    border-radius: 1vh;
+    background-color: white;
+    color: rebeccapurple;
+    font-size: 3vh;
+    border-width: 0vh;
+}
+
+.form-button:hover{
+    background-color: violet;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.listed-thread{
+    width: 100%;
+    height: 20vh;
+    background-color: rebeccapurple;
+    margin-top: 7vh;
+    border-radius: 1vh;
+    border-width: 0vh;
+    transition-duration: 0.4s;
+}
+
+.listed-thread:hover{
+    background-color: blueviolet;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.thread-title{
+    font-size: 3vh;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
