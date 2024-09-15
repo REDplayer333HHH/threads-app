@@ -18,6 +18,11 @@ namespace threads_app.Controllers
         public ThreadController(Database _database)
         {
             database = _database;
+
+            // Temporary cleaner:
+            // foreach (var thread in database.ThreadTable.ToList()){
+            //     database.Remove(thread);
+            // }
         }
 
         [HttpGet]

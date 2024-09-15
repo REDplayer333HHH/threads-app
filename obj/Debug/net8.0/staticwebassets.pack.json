@@ -1,20 +1,28 @@
 {
   "Files": [
     {
-      "Id": "/home/horia/projects/cs/threads-app/wwwroot/create.html",
-      "PackagePath": "staticwebassets/create.html"
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/create/create.html",
+      "PackagePath": "staticwebassets/create/create.html"
     },
     {
-      "Id": "/home/horia/projects/cs/threads-app/wwwroot/explore.html",
-      "PackagePath": "staticwebassets/explore.html"
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/create/create.js",
+      "PackagePath": "staticwebassets/create/create.js"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/explore/explore.html",
+      "PackagePath": "staticwebassets/explore/explore.html"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/explore/explore.js",
+      "PackagePath": "staticwebassets/explore/explore.js"
     },
     {
       "Id": "/home/horia/projects/cs/threads-app/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/home/horia/projects/cs/threads-app/wwwroot/program.js",
-      "PackagePath": "staticwebassets/program.js"
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/index.js",
+      "PackagePath": "staticwebassets/index.js"
     },
     {
       "Id": "/home/horia/projects/cs/threads-app/wwwroot/style.css",

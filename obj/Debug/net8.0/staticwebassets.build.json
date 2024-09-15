@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RbP2o31Qh98i8HaXxltgWcfonF6OZ0KBA8h/XbCe9Vg=",
+  "Hash": "vNEZjJvSsoMuoNwVj5IOy9NTQ5/if67ScpO4The2c7o=",
   "Source": "threads-app",
   "BasePath": "_content/threads-app",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/create.html",
+      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/create/create.html",
       "SourceId": "threads-app",
       "SourceType": "Discovered",
       "ContentRoot": "/home/horia/projects/cs/threads-app/wwwroot/",
       "BasePath": "_content/threads-app",
-      "RelativePath": "create.html",
+      "RelativePath": "create/create.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,15 +33,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/create.html"
+      "OriginalItemSpec": "wwwroot/create/create.html"
     },
     {
-      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/explore.html",
+      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/create/create.js",
       "SourceId": "threads-app",
       "SourceType": "Discovered",
       "ContentRoot": "/home/horia/projects/cs/threads-app/wwwroot/",
       "BasePath": "_content/threads-app",
-      "RelativePath": "explore.html",
+      "RelativePath": "create/create.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/explore.html"
+      "OriginalItemSpec": "wwwroot/create/create.js"
+    },
+    {
+      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/explore/explore.html",
+      "SourceId": "threads-app",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/horia/projects/cs/threads-app/wwwroot/",
+      "BasePath": "_content/threads-app",
+      "RelativePath": "explore/explore.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/explore/explore.html"
+    },
+    {
+      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/explore/explore.js",
+      "SourceId": "threads-app",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/horia/projects/cs/threads-app/wwwroot/",
+      "BasePath": "_content/threads-app",
+      "RelativePath": "explore/explore.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/explore/explore.js"
     },
     {
       "Identity": "/home/horia/projects/cs/threads-app/wwwroot/index.html",
@@ -74,12 +112,12 @@
       "OriginalItemSpec": "wwwroot/index.html"
     },
     {
-      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/program.js",
+      "Identity": "/home/horia/projects/cs/threads-app/wwwroot/index.js",
       "SourceId": "threads-app",
       "SourceType": "Discovered",
       "ContentRoot": "/home/horia/projects/cs/threads-app/wwwroot/",
       "BasePath": "_content/threads-app",
-      "RelativePath": "program.js",
+      "RelativePath": "index.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -90,7 +128,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/program.js"
+      "OriginalItemSpec": "wwwroot/index.js"
     },
     {
       "Identity": "/home/horia/projects/cs/threads-app/wwwroot/style.css",
