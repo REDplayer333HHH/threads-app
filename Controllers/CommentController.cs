@@ -20,6 +20,15 @@ namespace threads_app.Controllers
             database = _database;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetById(){
+            var comment = await database.CommentTable.ToListAsync();
+            if(comment == null){
+                return NotFound();
+            }
+            return Ok(comment);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id){
             var comment = await database.CommentTable.FindAsync(id);
@@ -29,10 +38,13 @@ namespace threads_app.Controllers
             return Ok(comment);
         }
 
-        [HttpPost("{id}")]
-        public async Task<IActionResult> Create(int id, [FromBody] CommentNoId commentNoId){
+        [HttpPost("{threadId}")]
+        public async Task<IActionResult> Create(int threadId, [FromBody] CommentNoId commentNoId){
+            // if(!await database.CommentTable.AnyAsync(thread => thread.Id == threadId)){
+            //     return BadRequest("Thread does not exist");
+            // }
             var commentToPost = commentNoId.ToComment();
-            commentToPost.ThreadId = id;
+            commentToPost.ThreadId = threadId;
             await database.CommentTable.AddAsync(commentToPost);
             await database.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = commentToPost.Id }, commentToPost);
