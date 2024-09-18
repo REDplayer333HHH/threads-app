@@ -1,5 +1,6 @@
 using threads_app.Data;
 using Microsoft.EntityFrameworkCore;
+using threads_app.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Database>(dbcontextOptionsBuilder => {
     dbcontextOptionsBuilder.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddScoped<ThreadRepository>();
 
 var app = builder.Build();
 

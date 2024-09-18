@@ -10,11 +10,11 @@
         "projectUniqueName": "/home/horia/projects/cs/threads-app/threads-app.csproj",
         "projectName": "threads-app",
         "projectPath": "/home/horia/projects/cs/threads-app/threads-app.csproj",
-        "packagesPath": "/root/.nuget/packages/",
+        "packagesPath": "/home/horia/.nuget/packages/",
         "outputPath": "/home/horia/projects/cs/threads-app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/home/horia/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
