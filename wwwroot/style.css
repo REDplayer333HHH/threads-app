@@ -140,3 +140,17 @@ body{
     background-color: violet;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.read-author{
+    color: white;
+    text-align: left;
+    margin-left: 3%;
+}
+
+.read-message{
+    color: white;
+    font-size: 2vh;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin-left: 3%;
+}

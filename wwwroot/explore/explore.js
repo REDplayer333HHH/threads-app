@@ -1,18 +1,12 @@
 let threads;
 let allThreadsData;
 
-console.log('hi');
-
 window.addEventListener('load', async function() {
     
     threads = document.getElementById("threads-box");
     allThreadsData = await getAllThreads();
     for(let i = 0; i < allThreadsData.length; i++){
-        const thread = displayThread(allThreadsData[i].title);
-        thread.addEventListener('click', () => {
-            console.log('hellooooo?');
-            goToReadPage();
-        });
+        displayThread(allThreadsData[i].title, allThreadsData[i].id);
     }
 });
 
@@ -37,7 +31,7 @@ async function getAllThreads() {
     }
 }
 
-function displayThread(threadName){
+function displayThread(threadName, threadId){
     let thread = document.createElement('button');
     thread.className = 'listed-thread';
 
@@ -48,9 +42,11 @@ function displayThread(threadName){
 
     threads.appendChild(thread);
 
-    return thread;
+    thread.addEventListener('click', () => {
+        goToReadPage(threadId);
+    });
 }
 
-function goToReadPage(){
-    window.location.href = baseurl + 'read/read.html';
+function goToReadPage(threadId){
+    window.location.href = baseurl + 'read/read.html' + '?threadId=' + threadId;
 }
