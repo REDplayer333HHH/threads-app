@@ -1,12 +1,18 @@
 let threads;
 let allThreadsData;
 
+console.log('hi');
+
 window.addEventListener('load', async function() {
     
     threads = document.getElementById("threads-box");
     allThreadsData = await getAllThreads();
     for(let i = 0; i < allThreadsData.length; i++){
-        displayThread(allThreadsData[i].title);
+        const thread = displayThread(allThreadsData[i].title);
+        thread.addEventListener('click', () => {
+            console.log('hellooooo?');
+            goToReadPage();
+        });
     }
 });
 
@@ -41,4 +47,10 @@ function displayThread(threadName){
     threadTitle.innerHTML = threadName;
 
     threads.appendChild(thread);
+
+    return thread;
+}
+
+function goToReadPage(){
+    window.location.href = baseurl + 'read/read.html';
 }
