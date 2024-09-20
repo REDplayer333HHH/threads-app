@@ -20,18 +20,24 @@ namespace threads_app.Controllers
             database = _database;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetById(){
-            var comment = await database.CommentTable.ToListAsync();
-            if(comment == null){
+        [HttpGet("/getbythreadid/{threadId}")]
+        public async Task<IActionResult> GetByThreadId(int threadId){
+            var commentList = await database.CommentTable.ToListAsync();
+            commentList.Select(comment => {
+                if(comment.Id == threadId){
+                    return comment;
+                }
+                return null;
+            });
+            if(commentList == null){
                 return NotFound();
             }
-            return Ok(comment);
+            return Ok(commentList);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id){
-            var comment = await database.CommentTable.FindAsync(id);
+        [HttpGet("{commentId}")]
+        public async Task<IActionResult> GetById(int commentId){
+            var comment = await database.CommentTable.FindAsync(commentId);
             if(comment == null){
                 return NotFound();
             }

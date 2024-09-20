@@ -1,7 +1,10 @@
+let threadData;
+
 window.addEventListener('load', async () => {
-    let data = await getThreadData();
-    setTitle(data);
-    setAuthor(data);
+    threadData = await getThreadData();
+    setTitle(threadData);
+    setAuthor(threadData);
+    setMessage(threadData);
 });
 
 async function getThreadData() {
@@ -9,13 +12,13 @@ async function getThreadData() {
     return await fetchThreadData(threadId);
 }
 
-function setTitle(data){
-    let titleElement = document.getElementById('thread-title');
-    titleElement.innerHTML = data.title;
-}
-
-function setAuthor(data){
-
+// post comment
+async function submitComment(e) {
+    if(e.key == 'Enter'){
+        let textareaElement = document.getElementById('comment-textarea');
+        await postComment(threadData.id, textareaElement.value);
+        textareaElement.value = '';
+    }
 }
 
 async function fetchThreadData(threadId){
@@ -37,4 +40,38 @@ async function fetchThreadData(threadId){
     catch(err){
         throw new Error(err);
     }
+}
+
+async function postComment(threadId, commentContent) {
+    try{
+        const res = await fetch(baseurl + 'thread/comment/' + threadId, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                content: commentContent
+            })
+        });
+        // let data = await res.json();
+        // console.log(data);
+    }
+    catch(err){
+        throw new Error(err);
+    }
+}
+
+function setTitle(data){
+    let titleElement = document.getElementById('thread-title');
+    titleElement.innerHTML = data.title;
+}
+
+function setAuthor(data){
+    let authorElement = document.getElementById('read-author');
+    authorElement.innerHTML = 'By: ' + data.author;
+}
+
+function setMessage(data){
+    let messageElement = document.getElementById('read-message');
+    messageElement.innerHTML = data.message;
 }
