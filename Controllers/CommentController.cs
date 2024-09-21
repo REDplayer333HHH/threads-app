@@ -18,24 +18,39 @@ namespace threads_app.Controllers
         public CommentController(Database _database)
         {
             database = _database;
+
+            // Temporary cleaner:
+            // foreach (var comment in database.CommentTable.ToList()){
+            //     database.Remove(comment);
+            // }
         }
 
-        [HttpGet("/getbythreadid/{threadId}")]
-        public async Task<IActionResult> GetByThreadId(int threadId){
-            var commentList = await database.CommentTable.ToListAsync();
-            commentList.Select(comment => {
-                if(comment.Id == threadId){
-                    return comment;
-                }
-                return null;
-            });
-            if(commentList == null){
+        [HttpGet] // GET all
+        public async Task<IActionResult> GetAll(){
+            var comment = await database.CommentTable.ToListAsync();
+            if(comment == null){
                 return NotFound();
             }
-            return Ok(commentList);
+            return Ok(comment);
         }
 
-        [HttpGet("{commentId}")]
+        [HttpGet("/thread/getbythreadid/{threadId}")] // GET all on specific thread (by id)
+        public async Task<IActionResult> GetByThreadId(int threadId){
+            var allComments = await database.CommentTable.ToListAsync();
+            List<Comment> commentsOnThread = new List<Comment>();
+            foreach (var comment in allComments)
+            {
+                if(comment.ThreadId == threadId){
+                    commentsOnThread.Add(comment);
+                }
+            }
+            if(commentsOnThread == null){
+                return NotFound();
+            }
+            return Ok(commentsOnThread);
+        }
+
+        [HttpGet("{commentId}")] // GET specific (by id)
         public async Task<IActionResult> GetById(int commentId){
             var comment = await database.CommentTable.FindAsync(commentId);
             if(comment == null){

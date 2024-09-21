@@ -63,10 +63,9 @@ body{
     text-align: center;
     overflow: hidden;
     width: 100%;
-    /*height: 80vh;*/
     background-color: rebeccapurple;
     border-radius: 1vh;
-    margin-top: 5vh;
+    margin-top: 2vh;
 }
 
 .form-label{
@@ -156,6 +155,8 @@ body{
     font-size: 3vh;
     text-align: left;
     margin-left: 3%;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
 }
 
 .comment-textarea{
