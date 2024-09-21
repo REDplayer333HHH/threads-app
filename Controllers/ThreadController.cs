@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using threads_app.Data;
-using threads_app.Dtos;
 using threads_app.Models;
+using threads_app.Repository;
 
 namespace threads_app.Controllers
 {
@@ -14,28 +14,22 @@ namespace threads_app.Controllers
     [ApiController]
     public class ThreadController: ControllerBase
     {
-        private readonly Database database;
-        public ThreadController(Database _database)
+        private readonly ThreadRepository repo;
+        public ThreadController(ThreadRepository _repo)
         {
-            database = _database;
-
-            // Temporary cleaner:
-            // foreach (var thread in database.ThreadTable.ToList()){
-            //     database.Remove(thread);
-            // }
+            repo = _repo;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var threads = await database.ThreadTable.ToListAsync();
-            return Ok(threads);
+            return Ok(await repo.GetAll());
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var thread = await database.ThreadTable.FindAsync(id);
+            var thread = await repo.GetById(id);
             if (thread == null){
                 return NotFound();
             }
@@ -45,10 +39,8 @@ namespace threads_app.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ThreadNoId threadNoId)
         {
-            var threadToPost = threadNoId.ToThread();
-            await database.ThreadTable.AddAsync(threadToPost);
-            await database.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = threadToPost.Id}, threadToPost);
+            var thread = await repo.Create(threadNoId);
+            return CreatedAtAction(nameof(GetById), new { id = thread.Id}, thread);
         }
     }
 }

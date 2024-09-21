@@ -1,6 +1,4 @@
-using threads_app.Data;
-using Microsoft.EntityFrameworkCore;
-
+using threads_app;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<Database>(dbcontextOptionsBuilder => {
-    dbcontextOptionsBuilder.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+DependencyManager.AddDependencies(builder);
 
 var app = builder.Build();
 

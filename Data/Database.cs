@@ -16,5 +16,6 @@ namespace threads_app.Data
         }
 
         public DbSet<Models.Thread> ThreadTable { get; set; }
+        public DbSet<Models.Comment> CommentTable { get; set; }
     }
 }
