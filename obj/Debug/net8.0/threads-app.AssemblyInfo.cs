@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("threads-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ced55ae99779b40c0c5d729c3a075d467aaea881")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cdde23594a37301696a0c7893b5c3e05d5bb859")]
 [assembly: System.Reflection.AssemblyProductAttribute("threads-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("threads-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
