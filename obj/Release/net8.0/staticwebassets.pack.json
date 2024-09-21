@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/create/create.html",
+      "PackagePath": "staticwebassets/create/create.html"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/create/create.js",
+      "PackagePath": "staticwebassets/create/create.js"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/explore/explore.html",
+      "PackagePath": "staticwebassets/explore/explore.html"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/explore/explore.js",
+      "PackagePath": "staticwebassets/explore/explore.js"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/index.js",
+      "PackagePath": "staticwebassets/index.js"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/read/read.html",
+      "PackagePath": "staticwebassets/read/read.html"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/read/read.js",
+      "PackagePath": "staticwebassets/read/read.js"
+    },
+    {
+      "Id": "/home/horia/projects/cs/threads-app/wwwroot/style.css",
+      "PackagePath": "staticwebassets/style.css"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.build.threads-app.props",
+      "PackagePath": "build\\threads-app.props"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.buildMultiTargeting.threads-app.props",
+      "PackagePath": "buildMultiTargeting\\threads-app.props"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.buildTransitive.threads-app.props",
+      "PackagePath": "buildTransitive\\threads-app.props"
+    },
+    {
+      "Id": "obj/Release/net8.0/staticwebassets/msbuild.threads-app.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
