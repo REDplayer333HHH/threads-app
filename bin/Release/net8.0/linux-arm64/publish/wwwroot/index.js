@@ -1,1 +1,1 @@
-const baseurl = 'http://192.168.88.32:8010/'
+const baseurl = 'http://localhost:8010/'
