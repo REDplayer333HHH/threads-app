@@ -107,10 +107,10 @@ function setMessage(data){
 function displayComment(content){
     let commentParentElement = document.getElementById('comment-box');
     let commentDiv = document.createElement('div');
-    commentDiv.className = 'form';
+    commentDiv.className = 'bg-danger mt-3 rounded mx-5'; // css
 
     let commentParagraph = document.createElement('p');
-    commentParagraph.className = 'read-message';
+    commentParagraph.className = 'text-white fs-3 fw-bold px-3'; // css
     commentParagraph.innerHTML = content;
     commentDiv.appendChild(commentParagraph);
 

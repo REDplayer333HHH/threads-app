@@ -33,10 +33,10 @@ async function getAllThreads() {
 
 function displayThread(threadName, threadId){
     let thread = document.createElement('button');
-    thread.className = 'listed-thread';
+    thread.className = 'col-10 rounded mt-5 btn btn-danger'; // css
 
     let threadTitle = document.createElement('h2');
-    threadTitle.className = 'thread-title';
+    threadTitle.className = 'fw-bold text-white'; // css
     thread.appendChild(threadTitle);
     threadTitle.innerHTML = threadName;
 
