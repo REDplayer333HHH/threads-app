@@ -16,9 +16,9 @@ namespace threads_app.Repository
             database = _database;
 
             // Temporary cleaner:
-            foreach (var thread in database.ThreadTable.ToList()){
-                database.Remove(thread);
-            }
+            // foreach (var thread in database.ThreadTable.ToList()){
+            //     database.Remove(thread);
+            // }
         }
         public async Task<List<Models.Thread>> GetAll(){
             return await database.ThreadTable.ToListAsync();
