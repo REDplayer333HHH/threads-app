@@ -20,31 +20,10 @@ window.addEventListener('load', function () {
             }
         }
         else {
-            throw new Error("allThreadsData is undefined");
+            console.error("allThreadsData is undefined");
         }
     });
 });
-function getAllThreads() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const res = yield fetch(baseurl + 'thread', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            if (!res.ok) {
-                throw new Error('Res not ok!');
-            }
-            const data = yield res.json();
-            return data;
-        }
-        catch (err) {
-            console.log(err);
-            return undefined;
-        }
-    });
-}
 function displayThread(threadName, threadId) {
     let thread = document.createElement('button');
     thread.className = 'col-12 rounded mt-5 btn btn-danger'; // css
@@ -53,10 +32,8 @@ function displayThread(threadName, threadId) {
     thread.appendChild(threadTitle);
     threadTitle.innerHTML = threadName;
     threads === null || threads === void 0 ? void 0 : threads.appendChild(thread);
+    // go to read page
     thread.addEventListener('click', () => {
-        goToReadPage(threadId);
+        window.location.href = baseurl + 'html/read.html' + '?threadId=' + threadId;
     });
-}
-function goToReadPage(threadId) {
-    window.location.href = baseurl + 'html/read.html' + '?threadId=' + threadId;
 }

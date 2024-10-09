@@ -34,7 +34,7 @@ namespace threads_app.Controllers
             return Ok(comment);
         }
 
-        [HttpGet("/thread/getbythreadid/{threadId}")] // GET all on specific thread (by id)
+        [HttpGet("getbythreadid/{threadId}")] // GET all on specific thread (by id)
         public async Task<IActionResult> GetByThreadId(int threadId){
             var allComments = await database.CommentTable.ToListAsync();
             List<Comment> commentsOnThread = new List<Comment>();
@@ -68,7 +68,7 @@ namespace threads_app.Controllers
             commentToPost.ThreadId = threadId;
             await database.CommentTable.AddAsync(commentToPost);
             await database.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = commentToPost.Id }, commentToPost);
+            return CreatedAtAction(nameof(GetById), new { commentId = commentToPost.Id }, commentToPost);
         }
     }
 }

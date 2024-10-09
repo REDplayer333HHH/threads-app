@@ -5,13 +5,19 @@ interface Thread {
     message: string
 }
 
+interface Comment{
+    id: number
+    threadId: number
+    content: string
+}
+
 var baseurl: string = 'http://localhost:8010/';
 
 // POST Thread
 async function postThread(title: string | undefined, author: string | undefined, message: string | undefined): Promise<void>{
     if(title && author && message){
         try{
-            const res = await fetch(baseurl + 'thread', {
+            const res: Response = await fetch(baseurl + 'thread', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -28,11 +34,11 @@ async function postThread(title: string | undefined, author: string | undefined,
             }
         }
         catch(err: any){
-            throw new Error(err);
+            console.error(err);
         }
     }
     else{
-        throw new Error("request made with undefined params")
+        console.error("request made with undefined params")
     }
 }
 
@@ -59,10 +65,33 @@ async function getAllThreads(): Promise<Thread[] | undefined> {
     }
 }
 
+// GET Thread
+async function getThread(threadId: number): Promise<Thread | undefined>{
+    try{
+        const res: Response = await fetch(baseurl + 'thread/' + threadId, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if(!res.ok){
+            throw new Error('Res is not ok!');
+        }
+
+        const data: Thread = await res.json();
+        return data;
+    }
+    catch(err: any){
+        console.error(err)
+        return undefined;
+    }
+}
+
 // POST Comment
 async function postComment(threadId: number, commentContent: string): Promise<void> {
     try{
-        const res = await fetch(baseurl + 'thread/comment/' + threadId, {
+        const res: Response = await fetch(baseurl + 'thread/comment/' + threadId, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -71,8 +100,28 @@ async function postComment(threadId: number, commentContent: string): Promise<vo
                 content: commentContent
             })
         });
+        if(!res.ok){
+            throw new Error(`Failed to post comment. Status: ${res.status} ${res.statusText}`)
+        }
     }
     catch(err: any){
-        throw new Error(err);
+        console.error(err)
+    }
+}
+
+// GET Comment -> threadId
+async function getComment(threadId: number) {
+    try{
+        const res: Response = await fetch(baseurl + 'thread/comment/getbythreadid/' + threadId, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await res.json();
+        return data;
+    }
+    catch(err){
+        console.error(err)
     }
 }

@@ -11,7 +11,7 @@ window.addEventListener('load', async function() {
         }
     }
     else{
-        throw new Error("allThreadsData is undefined");
+        console.error("allThreadsData is undefined")
     }
 });
 

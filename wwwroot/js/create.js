@@ -9,39 +9,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 let createFormButton;
-let createFormTitle;
-let createFormAuthor;
-let createFormMessage;
+let titleInput;
+let authorInput;
+let messageInput;
 window.addEventListener('load', function () {
     createFormButton = document.getElementById("submit-button");
-    createFormTitle = document.getElementById("input-title");
-    createFormAuthor = document.getElementById("input-author");
-    createFormMessage = document.getElementById("input-message");
     createFormButton === null || createFormButton === void 0 ? void 0 : createFormButton.addEventListener('click', () => __awaiter(this, void 0, void 0, function* () {
-        yield onSubmit();
+        var _a, _b, _c;
+        titleInput = (_a = document.getElementById("input-title")) === null || _a === void 0 ? void 0 : _a.value;
+        authorInput = (_b = document.getElementById("input-author")) === null || _b === void 0 ? void 0 : _b.value;
+        messageInput = (_c = document.getElementById("input-message")) === null || _c === void 0 ? void 0 : _c.value;
+        yield postThread(titleInput, authorInput, messageInput);
+        window.location.href = baseurl + 'html/explore.html';
     }));
 });
-function onSubmit() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const res = yield fetch(baseurl + 'thread', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    title: createFormTitle === null || createFormTitle === void 0 ? void 0 : createFormTitle.innerHTML,
-                    author: createFormAuthor === null || createFormAuthor === void 0 ? void 0 : createFormAuthor.innerHTML,
-                    message: createFormMessage === null || createFormMessage === void 0 ? void 0 : createFormMessage.innerHTML
-                })
-            });
-            if (!res.ok) {
-                throw new Error('Res not ok!');
-            }
-            window.location.href = baseurl + 'html/explore.html';
-        }
-        catch (err) {
-            console.log(err);
-        }
-    });
-}
