@@ -1,4 +1,4 @@
-let threadData;
+let threadData: Thread;
 
 window.addEventListener('load', async () => {
     threadData = await getThreadData();
@@ -8,9 +8,10 @@ window.addEventListener('load', async () => {
     await setComments(threadData);
 });
 
-async function getThreadData() {
+async function getThreadData(): Thread {
     let threadId = new URLSearchParams(window.location.search).get('threadId');
-    return await fetchThreadData(threadId);
+    let data: Thread = await fetchThreadData(threadId);
+    return data;
 }
 
 async function setComments(data) {
@@ -33,7 +34,7 @@ async function submitComment(e) {
     }
 }
 
-async function fetchThreadData(threadId){
+async function fetchThreadData(threadId): Promise<Thread>{
     try{
         const res = await fetch(baseurl + 'thread/' + threadId, {
             method: 'GET',
@@ -64,25 +65,6 @@ async function fetchCommentData(threadId) {
         });
         const data = await res.json();
         return data;
-    }
-    catch(err){
-        throw new Error(err);
-    }
-}
-
-async function postComment(threadId, commentContent) {
-    try{
-        const res = await fetch(baseurl + 'thread/comment/' + threadId, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                content: commentContent
-            })
-        });
-        // let data = await res.json();
-        // console.log(data);
     }
     catch(err){
         throw new Error(err);
